@@ -12,9 +12,10 @@ Then I made some changes to make my application to work with RESTful APIs. Here,
 
 ## USAGE
 
-To start, 
-	* Just clone this repository
-	* From Eclipse, Import this repository as 'Existing Projects into Workspace'. 
+To start,
+ 
+	1. Just clone this repository
+	2. From Eclipse, Import this repository as 'Existing Projects into Workspace'. 
 
 ##Bookmark Application
 
@@ -29,12 +30,13 @@ There are five RESTful APIs provided
 	5. DELETE /bookmarks:id			-	Delete particular bookmark
 
 I haven't done any pages to test above APIs. You have to use `curl` tool or your browser to test the APIs.
-While testing with JSON data, I highly recommend you to use PrettyJSON tool. Simply you can pipe the output to Python JSON tool( | python -mjson.tool).
-In below sample, I use default GAE `url` as http://localhost:8888.
+While testing with JSON data, I highly recommend you to use PrettyJSON tool. Simply you can pipe the output to Python JSON tool `| python -mjson.tool`.
+In below sample, I use default GAE url as http://localhost:8888.
 
 ###POST /bookmark
 
 	$ curl -H 'Content-Type: application/json' -d '{"url":"http://github.com", "name":"GitHub", "description" : "Long Live Opensource" }' http://localhost:8888/api/v1/bookmarks
+	
 	$ curl -H 'Content-Type: application/json' -d '{"url":"http://google.com", "name":"Google", "description" : "Do not be Evil" }' http://localhost:8888/api/v1/bookmarks
 
 ###GET /bookmarks
@@ -42,9 +44,10 @@ In below sample, I use default GAE `url` as http://localhost:8888.
 	$ curl http://localhost:8888/api/v1/bookmarks
 
 ###GET /bookmarks/:id
+
 	$ curl http://localhost:8888/api/v1/bookmarks/1590
 	
-	Note: I assume, the id is 1590. You have to place the ID which you got from GET all bookmarks.
+Note: I assume, the id is 1590. You have to place the ID which you got from GET all bookmarks.
 	
 ###PUT /bookmarks/:id
 
